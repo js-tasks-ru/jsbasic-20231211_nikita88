@@ -18,9 +18,7 @@ function print(text) {
  * @returns {boolean}
  */
 function isValid(name) {
-  if (isValid(name) == null) {
-    return false;
-  }
+  // ваш код...
 }
 
 /**
