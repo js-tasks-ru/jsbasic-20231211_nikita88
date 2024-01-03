@@ -1,5 +1,3 @@
-const { ConsoleReporter } = require("jasmine");
-
 function namify(users) {
   return users.map(function(user) {
     return user.name;
@@ -13,11 +11,3 @@ let masha = { name: 'Маша', age: 28 };
 let users = [vasya, petya, masha];
 let names = namify(users); 
 console.log(names);
-
-
-
-function sayHi() {
-  alert( "Привет" );
-}
-
-console.log( sayHi() );
