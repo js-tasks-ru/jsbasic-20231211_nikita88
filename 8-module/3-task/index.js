@@ -23,15 +23,14 @@ export default class Cart {
   }
 
   updateProductCount(productId, amount) {
-    for (let i = 0; i < this.cartItems.length; i++) {
-      if (this.cartItems[i].product.id === productId) {
-        this.cartItems[i].count = this.cartItems[i].count + +amount;
-
-        this.onProductUpdate(this.cartItems[i]);
-
-        if (this.cartItems[i].count === 0) {
-          this.cartItems.splice(i, 1);
-        }
+    let cartItem = this.cartItems.find(item => item.product.id === productId);
+    if (cartItem) {
+      cartItem.count = cartItem.count + +amount;
+  
+      this.onProductUpdate(cartItem);
+  
+      if (cartItem.count === 0) {
+        this.cartItems = this.cartItems.filter(item => item.product.id !== productId);
       }
     }
   }
